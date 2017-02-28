@@ -37,29 +37,34 @@ let array = digits.filter{ $0 < 5 }
 
 > 像是函數式 F(x) 一樣，需要將`Array`的每個值取出帶入所設定的條件，產生出新的值。
 
-```
+{% highlight text %}
+
 let cast = ["Vivien", "Marlon", "Kim", "Karl"]
 
 let letterCounts = cast.map { $0.characters.count }
 
 // 'letterCounts' == [6, 6, 3, 4]
-```
+
+{% endhighlight %}
 
 上述的例子是將 `cast Array` 中的每個元素取出來算組成每個單字的字母有幾個，得出新的值再放入 `letterCounts Array` 。
 
-```
+{% highlight text %}
+
 let digits = [1,4,10,15]
 
 let squares = digits.map{ (element) -> Int in return element * element}
 
 // squares = [1, 16, 100, 225]
 
-```
+{% endhighlight %}
+
 ### reduce
 
 > 會將 `Array` 裡面的值處理完後，回傳`一個值`。`reduce` 需要有兩個參數，一個為初始值，一個為 ` Closure` 裡面可以使用目前累加值與 Array 的元素。
 
-```
+{% highlight text %}
+
 let numbers = [1, 2, 3, 4]
 
 let numberSum = numbers.reduce(0, { x, y in
@@ -70,26 +75,32 @@ let numberSum = numbers.reduce(0, { x, y in
 
 // numberSum == 10
 
-```
+{% endhighlight %}
+
 可以寫為
 
-```
+{% highlight text %}
+
 let numbers = [1, 2, 3, 4]
 
 let numberSum = numbers.reduce(0) { $0 + $1 }
 
 // numberSum == 10
 
-```
+{% endhighlight %}
+
 `初始值 ＝ 0`，X  為累加值，Ｙ 為目前迴圈索取出的元素。
 
-```
+{% highlight text %}
+
 let string = ["a","b","c","d"]
 
 let text = string.reduce("==>") { result , element  in"\(result),\(element)"}
 
 // text 值為 ==>,a,b,c,d
-```
+
+{% endhighlight %}
+
 也可以結合字串
 
 ### flatMap
@@ -98,40 +109,50 @@ let text = string.reduce("==>") { result , element  in"\(result),\(element)"}
 
 第一種
 
-```
+{% highlight text %}
+
 func flatMap<SegmentOfResult>(_ transform: (Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Iterator.Element] where SegmentOfResult : Sequence
-```
+
+{% endhighlight %}
+
 > 會將多個 Array 變成一個 Array 。
 
-```
+{% highlight text %}
+
 let collections = [[5,2,7],[4,8],[9,1,3]]
 
 let flat = collections.flatMap { $0 }
 
 // [5, 2, 7, 4, 8, 9, 1, 3]
-```
+
+{% endhighlight %}
 
 第二種
 
-```
+{% highlight text %}
+
 func flatMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
-```
+
+{% endhighlight %}
+
 > 會移除掉陣列裡面存在有 Optional 的值。
 
-```
+{% highlight text %}
+
 let people: [String?] = ["Tom",nil,"Peter",nil,"Harry"]
 
 let valid = people.flatMap {$0}
 
 // ["Tom", "Peter", "Harry"]
 
-```
+{% endhighlight %}
 
 ### contains
 
 > 如果有陣列裡面有符合條件值，將回傳 Bool
 
-```
+{% highlight text %}
+
 let marks = [4,5,8,2,9,7]
 
 let even = marks.contains(where: {
@@ -149,11 +170,15 @@ let even = marks.contains(where: {
 
 //輸出為 true
 
-```
+{% endhighlight %}
+
 可以簡化成
-```
+
+{% highlight text %}
+
 let even = marks.contains(where: {$0 % 2 == 0})
-```
+
+{% endhighlight %}
 
 參考資料：
 
