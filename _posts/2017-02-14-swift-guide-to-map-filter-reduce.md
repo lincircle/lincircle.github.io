@@ -22,14 +22,16 @@ date: 2017-02-14 18:00:00
 
 > 將陣列裡面符合條件的元素，放置在一個新的陣列。
 
-```
+{% highlight text %}
+
 var digits = [1,4,10,15]
 
 let array = digits.filter{ $0 < 5 }
 
 //array = [1, 4]
 
-```
+{% endhighlight %}
+
 
 ### map
 
