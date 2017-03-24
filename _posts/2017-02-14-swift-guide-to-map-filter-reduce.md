@@ -22,7 +22,7 @@ date: 2017-02-14 18:00:00
 
 > 將陣列裡面符合條件的元素，放置在一個新的陣列。
 
-{% highlight text %}
+{% highlight swift linenos %}
 
 var digits = [1,4,10,15]
 
