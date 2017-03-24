@@ -37,7 +37,7 @@ let array = digits.filter{ $0 < 5 }
 
 > 像是函數式 F(x) 一樣，需要將`Array`的每個值取出帶入所設定的條件，產生出新的值。
 
-{% highlight text %}
+{% highlight swift %}
 
 let cast = ["Vivien", "Marlon", "Kim", "Karl"]
 
