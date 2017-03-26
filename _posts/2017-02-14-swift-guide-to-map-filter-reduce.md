@@ -22,7 +22,7 @@ date: 2017-02-14 18:00:00
 
 > 將陣列裡面符合條件的元素，放置在一個新的陣列。
 
-{% highlight swift linenos %}
+{% highlight swift %}
 
 var digits = [1,4,10,15]
 
@@ -49,7 +49,7 @@ let letterCounts = cast.map { $0.characters.count }
 
 上述的例子是將 `cast Array` 中的每個元素取出來算組成每個單字的字母有幾個，得出新的值再放入 `letterCounts Array` 。
 
-{% highlight text %}
+{% highlight swift %}
 
 let digits = [1,4,10,15]
 
@@ -63,7 +63,7 @@ let squares = digits.map{ (element) -> Int in return element * element}
 
 > 會將 `Array` 裡面的值處理完後，回傳`一個值`。`reduce` 需要有兩個參數，一個為初始值，一個為 ` Closure` 裡面可以使用目前累加值與 Array 的元素。
 
-{% highlight text %}
+{% highlight swift %}
 
 let numbers = [1, 2, 3, 4]
 
@@ -79,7 +79,7 @@ let numberSum = numbers.reduce(0, { x, y in
 
 可以寫為
 
-{% highlight text %}
+{% highlight swift %}
 
 let numbers = [1, 2, 3, 4]
 
@@ -91,7 +91,7 @@ let numberSum = numbers.reduce(0) { $0 + $1 }
 
 `初始值 ＝ 0`，X  為累加值，Ｙ 為目前迴圈索取出的元素。
 
-{% highlight text %}
+{% highlight swift %}
 
 let string = ["a","b","c","d"]
 
@@ -109,7 +109,7 @@ let text = string.reduce("==>") { result , element  in"\(result),\(element)"}
 
 第一種
 
-{% highlight text %}
+{% highlight swift %}
 
 func flatMap<SegmentOfResult>(_ transform: (Element) throws -> SegmentOfResult) rethrows -> [SegmentOfResult.Iterator.Element] where SegmentOfResult : Sequence
 
@@ -117,7 +117,7 @@ func flatMap<SegmentOfResult>(_ transform: (Element) throws -> SegmentOfResult) 
 
 > 會將多個 Array 變成一個 Array 。
 
-{% highlight text %}
+{% highlight swift %}
 
 let collections = [[5,2,7],[4,8],[9,1,3]]
 
@@ -129,7 +129,7 @@ let flat = collections.flatMap { $0 }
 
 第二種
 
-{% highlight text %}
+{% highlight swift %}
 
 func flatMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult]
 
@@ -137,7 +137,7 @@ func flatMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?)
 
 > 會移除掉陣列裡面存在有 Optional 的值。
 
-{% highlight text %}
+{% highlight swift %}
 
 let people: [String?] = ["Tom",nil,"Peter",nil,"Harry"]
 
@@ -151,7 +151,7 @@ let valid = people.flatMap {$0}
 
 > 如果有陣列裡面有符合條件值，將回傳 Bool
 
-{% highlight text %}
+{% highlight swift %}
 
 let marks = [4,5,8,2,9,7]
 
@@ -174,7 +174,7 @@ let even = marks.contains(where: {
 
 可以簡化成
 
-{% highlight text %}
+{% highlight swift %}
 
 let even = marks.contains(where: {$0 % 2 == 0})
 
