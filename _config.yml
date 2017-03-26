@@ -13,4 +13,4 @@ github_username:  lincircle
 # Build settings
 markdown: kramdown
 
-theme: jekyll-theme-midnight
+theme: jekyll-theme-cayman
